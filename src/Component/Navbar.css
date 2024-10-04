@@ -4,14 +4,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #333;
+  background-color: white;
   position: sticky;
   z-index: 1000;
   top: 0;
 }
 
 .nav-title {
-  color: #fff;
+  color: black;
   text-decoration: none;
   font-size: 24px;
 }
@@ -25,7 +25,7 @@ nav {
 .nav-menu span {
   height: 4px;
   width: 25px;
-  background: white;
+  background: black;
   margin: 4px 0;
   transition: all 0.3s ease;
 }
@@ -40,7 +40,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -55,7 +55,7 @@ nav ul li a {
     top: 60px;
     left: 0;
     right: 0;
-    background-color: #333;
+    background-color: whitesmoke;
     display: none;
     z-index: 1;
   }

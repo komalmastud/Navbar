@@ -1,39 +1,37 @@
+/* Slide.css */
+
 body {
-  position: relative;
   margin: 0; /* Remove default margin */
 }
 
-.Photos {
+.swiper-container {
   position: relative;
   overflow: hidden; /* Prevent overflow of images */
+  height: 80vh; /* Set height to 80vh */
+}
+
+.swiper-slide {
+  display: flex; /* Center content in slide */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%; /* Full height for each slide */
+}
+
+.Photos {
+  width: 100%; /* Full width for the image */
+  height: 100%; /* Full height for the image */
+  position: relative;
 }
 
 .Photos img {
   width: 100%;
-  height: 70vh; /* Adjust height automatically to maintain aspect ratio */
-  max-height: 80vh; /* Max height for larger screens */
+  height: 100%; /* Full height for Swiper */
   object-fit: cover; /* Maintain aspect ratio while covering */
 }
 
-.Photos::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.Photos .over,
-.Photos .overbutton {
-  position: absolute;
-  z-index: 2;
-  color: white;
-}
-
 .over {
+  position: absolute;
   left: 50%; /* Center horizontally */
   top: 20%; /* Initial position for larger screens */
   transform: translateX(-50%); /* Center the element */
@@ -45,6 +43,7 @@ body {
 }
 
 .overbutton {
+  position: absolute;
   bottom: 10px;
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Center the button */
@@ -53,8 +52,8 @@ body {
   border-radius: 2px;
   height: 6vh; /* Adjust height for smaller screens */
   width: 30%; /* Responsive width */
-  color: white;
   background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   text-align: center; /* Center text */
 }
 
@@ -64,11 +63,6 @@ body {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .Photos img {
-    height: auto;
-    max-height: 40vh; /* Reduce max height for tablets */
-  }
-
   .over {
     font-size: 1.5rem; /* Smaller text size */
     top: 10%; /* Adjust top position */
@@ -81,10 +75,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  .Photos img {
-    max-height: 50vh; /* Further reduce max height for mobile */
-  }
-
   .over {
     font-size: 1.2rem; /* Smaller text size */
     top: 5%; /* Adjust top position */
