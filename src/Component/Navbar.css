@@ -1,0 +1,70 @@
+/* Navbar.css */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+}
+
+.title {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.menu {
+  display: none; /* Hide menu button by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu span {
+  height: 4px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Navigation links */
+ul {
+  display: flex;
+  list-style: none;
+}
+
+ul li {
+  margin: 0 15px;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+    display: flex; /* Show menu button on smaller screens */
+  }
+
+  ul {
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;
+    top: 60px; /* Position below the navbar */
+    left: 0;
+    right: 0;
+    background-color: #333;
+    display: none; /* Initially hidden */
+    z-index: 1;
+  }
+
+  ul.open {
+    display: flex; /* Show links when menu is open */
+  }
+
+  ul li {
+    margin: 10px 0; /* Add margin for vertical stacking */
+    text-align: center;
+  }
+}
