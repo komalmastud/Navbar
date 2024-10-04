@@ -1,0 +1,14 @@
+.Image img {
+  height: 15vh;
+  width: 50%;
+  padding-left: 3px;
+}
+.fulldiv label {
+  margin-left: 200px;
+}
+.fulldiv {
+  z-index: 1;
+}
+.fulldiv h4 {
+  margin-left: 50px;
+}

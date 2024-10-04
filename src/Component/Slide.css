@@ -1,0 +1,97 @@
+body {
+  position: relative;
+  margin: 0; /* Remove default margin */
+}
+
+.Photos {
+  position: relative;
+  overflow: hidden; /* Prevent overflow of images */
+}
+
+.Photos img {
+  width: 100%;
+  height: 70vh; /* Adjust height automatically to maintain aspect ratio */
+  max-height: 80vh; /* Max height for larger screens */
+  object-fit: cover; /* Maintain aspect ratio while covering */
+}
+
+.Photos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.Photos .over,
+.Photos .overbutton {
+  position: absolute;
+  z-index: 2;
+  color: white;
+}
+
+.over {
+  left: 50%; /* Center horizontally */
+  top: 20%; /* Initial position for larger screens */
+  transform: translateX(-50%); /* Center the element */
+  color: white; /* Ensure text is visible */
+  font-size: 2rem; /* Use rem for responsiveness */
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.overbutton {
+  bottom: 10px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the button */
+  font-size: 1.5rem; /* Use rem for responsiveness */
+  cursor: pointer;
+  border-radius: 2px;
+  height: 6vh; /* Adjust height for smaller screens */
+  width: 30%; /* Responsive width */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center; /* Center text */
+}
+
+.overbutton:hover {
+  background-color: black;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .Photos img {
+    height: auto;
+    max-height: 40vh; /* Reduce max height for tablets */
+  }
+
+  .over {
+    font-size: 1.5rem; /* Smaller text size */
+    top: 10%; /* Adjust top position */
+  }
+
+  .overbutton {
+    font-size: 1.2rem; /* Smaller button text */
+    width: 40%; /* Adjust button width */
+  }
+}
+
+@media (max-width: 480px) {
+  .Photos img {
+    max-height: 50vh; /* Further reduce max height for mobile */
+  }
+
+  .over {
+    font-size: 1.2rem; /* Smaller text size */
+    top: 5%; /* Adjust top position */
+  }
+
+  .overbutton {
+    font-size: 1rem; /* Smaller button text */
+    width: 60%; /* Adjust button width */
+  }
+}

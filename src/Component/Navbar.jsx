@@ -7,11 +7,11 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${menuOpen ? "active" : ""}`}>
-      <Link to="/" className="title">
+      <Link to="/" className="nav-title">
         Webside
       </Link>
       <div
-        className="menu"
+        className="nav-menu"
         onClick={() => {
           setMenuOpen(!menuOpen);
         }}

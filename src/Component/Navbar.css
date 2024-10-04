@@ -5,21 +5,24 @@ nav {
   align-items: center;
   padding: 1rem;
   background-color: #333;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
 }
 
-.title {
+.nav-title {
   color: #fff;
   text-decoration: none;
   font-size: 24px;
 }
 
-.menu {
-  display: none; /* Hide menu button by default */
+.nav-menu {
+  display: none;
   flex-direction: column;
   cursor: pointer;
 }
 
-.menu span {
+.nav-menu span {
   height: 4px;
   width: 25px;
   background: white;
@@ -27,44 +30,42 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* Navigation links */
-ul {
+nav ul {
   display: flex;
   list-style: none;
 }
 
-ul li {
+nav ul li {
   margin: 0 15px;
 }
 
-ul li a {
+nav ul li a {
   color: white;
   text-decoration: none;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
-  .menu {
-    display: flex; /* Show menu button on smaller screens */
+  .nav-menu {
+    display: flex;
   }
 
-  ul {
-    flex-direction: column; /* Stack links vertically */
+  nav ul {
+    flex-direction: column;
     position: absolute;
-    top: 60px; /* Position below the navbar */
+    top: 60px;
     left: 0;
     right: 0;
     background-color: #333;
-    display: none; /* Initially hidden */
+    display: none;
     z-index: 1;
   }
 
-  ul.open {
-    display: flex; /* Show links when menu is open */
+  nav ul.open {
+    display: flex;
   }
 
-  ul li {
-    margin: 10px 0; /* Add margin for vertical stacking */
+  nav ul li {
+    margin: 10px 0;
     text-align: center;
   }
 }
